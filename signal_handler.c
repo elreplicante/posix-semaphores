@@ -75,7 +75,7 @@ void* signal_handler_thread(void * c)
 	act.sa_handler = USR1_handler;
 	act.sa_flags = 0;
 	sigemptyset(&act.sa_mask);
-	if (sigaction(SIGUSR1, &act, NULL) {
+	if (sigaction(SIGUSR1, &act, NULL) != 0) {
         printf("ERROR: can't install SIGUSR1 signal handler");
 		return NULL;
 	}

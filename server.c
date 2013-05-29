@@ -72,13 +72,12 @@ int execute_random_service(message_t* msg, int msgcnt) {
 	int ran = rand() % 100;
 	random_value = &ran;
 
-	/* Print the local time as a string */
+	/* Print a random number */
 	fprintf(logfile, "SERVER [#%i]: The current random number is %i ", msgcnt,
 			ran);
 
-	/* COPY string  into message content */
+	/* COPY value into message content */
 		strcpy((char*) msg->content, random_value);
-
 
 	return 0;
 }
